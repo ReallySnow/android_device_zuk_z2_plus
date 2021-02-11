@@ -20,20 +20,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from z2_plus device
 $(call inherit-product, device/zuk/z2_plus/device.mk)
 
-# Inherit some common PixysOS stuff.
-$(call inherit-product, vendor/pixys/config/common_full_phone.mk)
-
-# Pixys stuff
-DEVICE_MAINTAINERS="Aswin A S & Nikhil Gohil"
-
-# GApps
-TARGET_GAPPS_ARCH := arm64
-
-# Boot animation
+# Inherit some common Ressurection stuff
+TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
+$(call inherit-product, vendor/rr/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := pixys_z2_plus
+PRODUCT_NAME := rr_z2_plus
 PRODUCT_DEVICE := z2_plus
 PRODUCT_BRAND := ZUK
 PRODUCT_MODEL := Z2 Plus
